@@ -2,7 +2,7 @@ import tkinter as tk
 
 WHITE = '#FFFFFF'
 BLACK = '#000000'
-# create colours with hexcode
+# create colours with hexcode !!!! Commit
 
 class Calculator:
     def __init__ (self):
@@ -12,6 +12,8 @@ class Calculator:
         self.window.resizable(0,0)
         self.display_frame = self.create_display_frame()
         self.button_frame = self.create_button_frame()
+        self.current_expression_text = "0"
+        self.result_expression_text = "0"
     def create_display_frame(self):
         frame = tk.Frame(self.window, height=221,bg='red')
         frame.pack(expand=True, fill='both')

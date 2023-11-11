@@ -2,7 +2,6 @@ import tkinter as tk
 
 WHITE = '#FFFFFF'
 BLACK = '#000000'
-# create colours with hexcode !!!! Commit
 
 class Calculator:
     def __init__ (self):

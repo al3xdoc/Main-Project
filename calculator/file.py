@@ -21,7 +21,7 @@ class Calculator:
         self.digits = {7:(1,1), 8:(1,2), 9:(1,3),
                        4:(2,1), 5:(2,2), 6:(2,3),
                        1:(3,1), 2:(3,2), 3:(3,3),
-                                0:(4,2), ".":(4,3)} #create a blank method, create buttons (digit)
+                                0:(4,2), ".":(4,3)} 
     def create_display_frame(self):
         frame = tk.Frame(self.window, height=221,bg=BLACK)
         frame.pack(expand=True, fill='both')

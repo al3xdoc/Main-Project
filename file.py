@@ -73,13 +73,13 @@ class Calculator:
         button = tk.Button(self.button_frame, text = "x\u00b2", bg = BLACK, foreground = WHITE, font= Digit_font, command = self.square)
         button.grid(row = 0, column = 2, sticky = tk.NSEW ) 
     def square(self):
-        self.result_expression_text = str(eval(f"{self.result_expression_text}** 2"))
+        self.result_expression_text = str(round(eval(f"{self.result_expression_text}** 2"),5))
         self.update_result_label()
     def create_sqrt_button(self):
         button = tk.Button(self.button_frame, text = "\u221ax", bg = BLACK, foreground = WHITE, font= Digit_font, command = self.sqrt)
         button.grid(row = 0, column = 3, sticky = tk.NSEW ) 
     def sqrt(self):
-        self.result_expression_text = str(eval(f"{self.result_expression_text}** (1/2)"))
+        self.result_expression_text = str(round(eval(f"{self.result_expression_text}** (1/2)"),5))
         self.update_result_label()
     def create_delete_button(self):
         button = tk.Button(self.button_frame, text = "<=", bg = BLACK, foreground = WHITE, font= Digit_font, command = self.delete)
@@ -102,10 +102,16 @@ class Calculator:
         self.result_expression_text = "0"
     def equal(self):
         self.current_expression_text += self.result_expression_text
-        self.result_expression_text = eval(self.current_expression_text)
-        self.result_expression_text = str(self.result_expression_text) 
-        self.update_result_label()
-        self.update_current_label()
+        try:
+            self.result_expression_text = round(eval(self.current_expression_text), 5)
+            self.result_expression_text = str(self.result_expression_text) 
+        except: 
+            self.current_expression_text = "Can't divide by 0" 
+            self.update_current_label()
+            self.current_expression_text = "0"
+        else:
+            self.update_result_label()
+            self.update_current_label()
     def update_result_label(self):
         self.result_label.config(text = self.result_expression_text)
     def update_current_label(self):
@@ -117,4 +123,4 @@ class Calculator:
 if __name__ == "__main__":
     cal = Calculator()
     cal.run()
-       
+    

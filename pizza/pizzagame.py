@@ -48,12 +48,15 @@ class Pizza:
         if ingredient == "Add Sauce":
             self.sauce = self.canvas.create_oval(0,0,PIZZA_SIZES[self.size] - 10, PIZZA_SIZES[self.size] - 10, fill = RED, outline= RED)
             self.canvas.move(self.sauce , self.canvas.winfo_reqwidth()/2 + 5 , self.canvas.winfo_reqheight()/2 + 5)
-        #elif ingredient == "Add Pepperoni":
+        elif ingredient == "Add Pepperoni":
+            self.peoperoni = self.canvas.create_oval(0,0,PIZZA_SIZES
+        
         #elif ingredient == "Add Mushrooms":
         elif ingredient == "Add Cheese":
             self.sauce = self.canvas.create_oval(0,0,PIZZA_SIZES[self.size] - 10, PIZZA_SIZES[self.size] - 10, fill = YELLOW, outline= YELLOW)
-            self.canvas.move(self.sauce , self.canvas.winfo_reqwidth()/2 + 5 , self.canvas.winfo_reqheight()/2 + 5)
-        #elif #create other ingrediensLKH
+            self.canvas.move(self.sauce , self.canvas.winfo_reqwidth()/2 + 5 , self.canvas.winfo_reqheight()/2 +5
+        #elif ingredient == "Add Chiken":
+        #elif ingredient == "Add Sausage":
 
     def create_bake_button(self):
         button = tk.Button(self.window, text = "Bake!", font = Digit_font )
